@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Toggle from "./Toggle";
 
 function App() {
+  const [isOn, setIsOn] = useState(false);
   return (
-    <div>
+    <div style={isOn ? { background: "red" } : { background: "black" }}>
       <h3>Toggle</h3>
-      <Toggle />
+      <Toggle isOn={isOn} setIsOn={setIsOn} />
     </div>
   );
 }
